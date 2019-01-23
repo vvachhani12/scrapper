@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a class="brand-logo center">Mongo Scrapper</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Saved Articles</a></li>
+            </ul>
+        </div>
+    </nav>
+    {{!-- <div class="container"> --}}
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-4">Saved Articles!</h1>
+                <p class="lead"></p>
+                <hr class="my-4">
+                <p>Click 'Clear Articles' to delete all the articles.</p>
+                {{!-- <button class="btn btn-primary btn-lg" type="submit" id="scrape" >Scrape Articles</button> --}}
+                <a class="btn btn-primary btn-lg" type="submit" id="removeArticles">Clear Articles</a>
+            </div>
+        </div>
+        <div id="savedArticles">
+            
+        </div>
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal modal-fixed-footer">
+            <div class="modal-header">
+                <h4>Notes for Article: <span id="articleTitle"></span></h4>
+            </div>
+            <div class="modal-content" id="articleNotes">
+                {{!-- <input id='titleinput' name='title'> --}}
+                <textarea id='bodyinput' name='body'></textarea>
+            </div>
+            {{!-- <div class='modal-content' id="addNotes">
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1">Textarea</label>
+            </div> --}}
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Save Notes</a>
+            </div>
+        </div>
+    {{!-- <div> --}}
+</body>
+
+</html>
