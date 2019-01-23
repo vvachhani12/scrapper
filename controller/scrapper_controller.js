@@ -8,8 +8,19 @@ const cheerio = require('cheerio');
 const db = require('../models');
 
 
-mongoose.connect('mongodb://localhost/articleScrapper', {useNewUrlParser: true});
 
+// ------------------Define local MongoDB URI----------------------//
+var databaseUri = 'mongodb://localhost/articleScrapper';
+//-----------------------------------------------------------------//
+if(process.env.MONGODB_URI){
+    //THIS EXECUTES IF THIS IS BEING EXECUTED IN YOUR HEROKU APP
+    mongoose.connect(process.env.MONGODB_URI);
+}else{
+    //THIS EXECUTES IF THIS IS BEING EXECUTED ON YOUR LOCAL MACHINE
+    mongoose.connect(databaseUri);
+}
+
+mongoose.connect('mongodb://localhost/articleScrapper', {useNewUrlParser: true});
 
 router.get('/', function(req, res){
     
